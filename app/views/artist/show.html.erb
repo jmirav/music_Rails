@@ -33,33 +33,32 @@
     </form> -->
   </div>
   </nav>
-
-
-
-
-  <div class="row">
-    <div class="col-sm-8">
-      <h1><%= @artist.name %></h1>
-      <h2>Albums (<%= @albums.count %>)</h2>
-      <div class="row">
-        <% @albums.each do |i| %>
-          <div class="col-sm-3">
-            <div class="card" style="width: 8rem;">
-                <img class="card-img-top" height="110" src="<%= i.image_url %>" alt="Artist image">
-                <div class="card-body">
-                  <h6 class="card-title"><%= i.name %></h6>
-                  <p class="card-text"><%= i.released_at %></p>
-
+  <div class="container" style="margin-top: 30px;">
+    <div class="row">
+      <div class="col-sm-7">
+        <h1><%= @artist.name %></h1>
+        <hr>
+        <h3>Albums (<%= @albums.count %>)</h3>
+        <div class="row" style="margin-top: 30px;">
+          <% @albums.each do |i| %>
+            <div class="col-sm-3">
+            <div class="thumbnail" style="height: 225px;">
+                <img src="<%= i.image_url %>" alt="<%= i.name %>" style="height: 125px;">
+                <div class="caption">
+                  <h6><%= i.name %></h6>
+                  <p><%= i.released_at %></p>
                 </div>
             </div>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-        <img src="<%= @artist.image_url %>" alt="Foto del artista">
-    </div>
 
+      <div class="col-sm-5">
+        <img src="<%= @artist.image_url %>" alt="<%= @artist.name %>" class="img-thumbnail">
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
