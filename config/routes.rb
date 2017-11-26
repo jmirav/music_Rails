@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get '/artists', to: 'artist#index'
 
-  get '/artists/:id', to: 'artist#show', :path => "artist"
+  get '/artists/:id', to: 'artist#show', :as => :artist
 
 end
